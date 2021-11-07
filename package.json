@@ -1,0 +1,35 @@
+{
+    "name": "6-express",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "set DEBUG=app:* && set NODE_ENV=development && nodemon index",
+        "start": "SET NODE_ENV=production & node",
+        "test": "mocha --exit",
+        "cover": "nyc npm run test",
+        "report": "nyc report --reporter=html &&  cd coverage && index.html"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@hapi/boom": "^9.1.4",
+        "@hapi/joi": "^17.1.1",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "mongodb": "^4.1.4"
+    },
+    "devDependencies": {
+        "mocha": "^9.1.3",
+        "nodemon": "^2.0.14",
+        "nyc": "^15.1.0",
+        "proxyquire": "^2.1.3",
+        "sinon": "^12.0.1",
+        "supertest": "^6.1.6"
+    },
+    "nyc": {
+        "alt": true,
+        "include": ["routes", "services", "lib", "utils"]
+    }
+}
